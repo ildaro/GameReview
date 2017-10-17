@@ -1,7 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Game.delete_all
+
+Game.create!(title: 'Overwatch',
+    publisher: 'Blizzard Entertainment',
+    genre: 'First-Person Shooter',
+    release_date: DateTime.new(2016,5,24),
+    platform: 'PC, PS4 and Xbox1',
+    description:
+        %{<p>
+            In a time of global crisis, an international task force of heroes banded together to restore peace to a war-torn world: OVERWATCH.
+            It ended the crisis and helped to maintain peace in the decades that followed, inspiring an era of exploration, innovation, and discovery.
+        </p>},
+    image_url: 'overwatch.jpg')
