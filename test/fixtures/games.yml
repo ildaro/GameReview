@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
+  title: Game
   publisher: MyString
   genre: MyString
   release_date: 2017-10-17
   platform: MyString
   description: MyText
-  image_url: MyString
+  image_url: MyString.jpg
 
 two:
-  title: MyString
+  title: Game1
   publisher: MyString
   genre: MyString
   release_date: 2017-10-17
   platform: MyString
   description: MyText
-  image_url: MyString
+  image_url: MyString.jpg
