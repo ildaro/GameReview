@@ -2,31 +2,8 @@
 
 <h1>Listing Games</h1>
 
-<table>
-
-
-  <tbody>
-    <% @games.each do |game| %>
-      <tr>
-      <%= content_tag :tr, class: cycle('list_line_odd', 'list_line_even') do %>
-        <td>
-          <%= image_tag(game.image_file, class: 'list_image') %>
-        </td>
-        <td><%= game.title %></td>
-        <td><%= game.publisher %></td>
-        <td><%= game.genre %></td>
-        <td><%= game.release_date %></td>
-        <td><%= game.platform %></td>
-        <td><%= game.description %></td>
-        <td><%= game.image_file %></td>
-        <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<% @games.each do |game| %>
+  <h2><%= game.title%></h2>
+<% end %>
 
 <%= link_to 'New Game', new_game_path %>
