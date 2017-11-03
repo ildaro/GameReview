@@ -7,7 +7,7 @@ one:
   release_date: 2017-10-17
   platform: MyString
   description: MyText
-  image_url: MyString.jpg
+  image_file: MyString.jpg
 
 two:
   title: Game1
@@ -16,4 +16,4 @@ two:
   release_date: 2017-10-17
   platform: MyString
   description: MyText
-  image_url: MyString.jpg
+  image_file: MyString.jpg

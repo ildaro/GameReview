@@ -10,7 +10,7 @@
       <tr>
       <%= content_tag :tr, class: cycle('list_line_odd', 'list_line_even') do %>
         <td>
-          <%= image_tag(game.image_url, class: 'list_image') %>
+          <%= image_tag(game.image_file, class: 'list_image') %>
         </td>
         <td><%= game.title %></td>
         <td><%= game.publisher %></td>
@@ -18,7 +18,7 @@
         <td><%= game.release_date %></td>
         <td><%= game.platform %></td>
         <td><%= game.description %></td>
-        <td><%= game.image_url %></td>
+        <td><%= game.image_file %></td>
         <td><%= link_to 'Show', game %></td>
         <td><%= link_to 'Edit', edit_game_path(game) %></td>
         <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>

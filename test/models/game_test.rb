@@ -9,6 +9,6 @@ class GameTest < ActiveSupport::TestCase
     assert game.errors[:genre].any?
     assert game.errors[:platform].any?
     assert game.errors[:description].any?
-    assert game.errors[:image_url].any?
+    assert game.errors[:image_file].any?
   end
 end

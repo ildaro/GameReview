@@ -7,7 +7,7 @@ class CreateGames < ActiveRecord::Migration
       t.date :release_date
       t.string :platform
       t.text :description
-      t.string :image_url
+      t.string :image_file
 
       t.timestamps null: false
     end
