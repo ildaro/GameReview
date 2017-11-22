@@ -10,7 +10,12 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.json
   def show
+    if @game.reviews.blank?
+      @average_review = 0
+    else
+      @average_review = @game.reviews.average(:rating).round(2)
   end
+end
 
   # GET /games/new
   def new

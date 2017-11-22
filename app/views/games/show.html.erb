@@ -1,40 +1,46 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+  <img src="<%= @game.image_file%>" alt="Image Thumbnail" class="img-thumbnail">
 
-<p>
-  <strong>Title:</strong>
-  <%= @game.title %>
-</p>
+</div>
+  <div class="col-md-8">  
 
-<p>
-  <strong>Publisher:</strong>
-  <%= @game.publisher %>
-</p>
+    <h2>Title: </h2>
+    <h3><%= @game.title %></h3>
+    <h2>Publisher: </h2>
+    <h3><%= @game.publisher %></h3>
+    <h2>Genre: </h2>
+    <h3><%= @game.genre %></h3>
+    <h2>Released: </h2>
+    <h3><%= @game.release_date %></h3>
+    <h2>Platform(s): </h2>
+    <h3><%= @game.platform %></h3>
+    <h2>Average Rating</h2>
+    <h3><%= @average_review %> out of 5</h3>
+    <h2>Description: </h2>
+    <h3><p><%= @game.description %></p></h3>
 
-<p>
-  <strong>Genre:</strong>
-  <%= @game.genre %>
-</p>
+    <h3><%= link_to 'Back', games_path %></h3>  
+    
+    <% if session[:user_id] %>
+    
+      <h3><%= link_to 'Edit Game', edit_game_path(@game) %></h3>   
+      <h3><%= link_to 'Delete Game', game_path(@game), method: :delete, data: { confirm: "Are you sure?" } %></h3>
+    <% end %>
 
-<p>
-  <strong>Release date:</strong>
-  <%= @game.release_date %>
-</p>
+  </div>
+</div>
 
-<p>
-  <strong>Platform:</strong>
-  <%= @game.platform %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @game.description %>
-</p>
-
-<p>
-  <strong>Image file:</strong>
-  <%= @game.image_file %>
-</p>
-
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Delete', game_path(@game), method: :delete, data: { confirm: "Are you sure?" } %> |
-<%= link_to 'Back', games_path %>
+<div class="row">
+  <div class="col-md-8">
+    <div>
+      <% if session[:user_id] %>
+        <a href="/games/<%= @game.id %>/reviews/new" class="btn btn-primary"><h3>Add Review</h3></a>
+      <% end %>
+    </div>
+      <h1>User Reviews</h1>
+      <%= render @game.reviews %>
+  </div>
+</div>
+</div>

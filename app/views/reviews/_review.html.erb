@@ -1,0 +1,11 @@
+<h2>Rating: <%= review.rating %> out of 5</h2>
+<h3><p><%= review.comment %></p></h3>
+
+<div>
+<% if session[:user_id] %>
+    
+    <%= link_to "Edit", edit_game_review_path(review.game, review) %> |
+    <%= link_to "Delete", game_review_path(review.game, review), method: :delete, data: { confirm: "Are you sure?" } %>
+
+<% end %>
+</div>
